@@ -10,6 +10,8 @@ import AIDoctor from "./pages/AIDoctor";
 import HospitalBooking from "./pages/HospitalBooking";
 import BedBooking from "./pages/BedBooking";
 import AppointmentBooking from "./pages/AppointmentBooking";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +63,8 @@ const App = () => (
           <Route path="/hospital-booking" element={<PageTransition><HospitalBooking /></PageTransition>} />
           <Route path="/bed-booking" element={<PageTransition><BedBooking /></PageTransition>} />
           <Route path="/appointment-booking" element={<PageTransition><AppointmentBooking /></PageTransition>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

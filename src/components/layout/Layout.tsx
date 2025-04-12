@@ -1,5 +1,7 @@
 
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { LogIn } from 'lucide-react';
 import Sidebar from './Sidebar';
 
 type LayoutProps = {
@@ -35,6 +37,13 @@ const Layout = ({ children }: LayoutProps) => {
               <span className="hidden sm:inline">Last updated:</span>
               <span className="text-med-cyan">Just now</span>
             </div>
+            <Link 
+              to="/login"
+              className="flex items-center gap-1 bg-med-cyan/10 hover:bg-med-cyan/20 transition-colors text-med-cyan py-1 px-3 rounded-full text-sm"
+            >
+              <LogIn className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Login</span>
+            </Link>
           </div>
         </header>
         
