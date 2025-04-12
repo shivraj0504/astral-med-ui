@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - Appointment Booking</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-pulse"></div>
+        <span>AstralMed</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-icon home-icon"></span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-icon robot-icon"></span>
+          <span class="sidebar-text">AI Doctor</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-icon hospital-icon"></span>
+          <span class="sidebar-text">Hospital Booking</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span class="sidebar-icon bed-icon"></span>
+          <span class="sidebar-text">Bed Booking</span>
+        </a>
+        <a href="#" class="sidebar-link active">
+          <span class="sidebar-icon calendar-icon"></span>
+          <span class="sidebar-text">Appointment Booking</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <div class="system-indicator">
+            <div class="pulse-dot"></div>
+          </div>
+          <div>
+            <h3 class="system-title">AstralMed System</h3>
+            <h4 class="system-status">Medical Status: <span class="status-active">Active</span></h4>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="system-status-indicator">
+            <div class="status-text">System Status</div>
+            <div class="status-active-text">
+              <div class="status-dot"></div>
+              All Systems Operational
+            </div>
+          </div>
+          <div class="last-updated">
+            <span>Last updated:</span>
+            <span class="updated-time">Just now</span>
+          </div>
+          <a href="#" class="login-button">
+            <span class="login-icon"></span>
+            <span>Login</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Appointment Booking Content -->
+      <main class="content">
+        <div class="page-container">
+          <header class="page-header">
+            <h1 class="page-title">Appointment Booking</h1>
+            <p class="page-description">Schedule consultations with specialists</p>
+          </header>
+          
+          <div class="booking-layout">
+            <!-- Specialists Section -->
+            <div class="specialists-panel">
+              <div class="panel">
+                <h3 class="panel-title">Find a Specialist</h3>
+                
+                <div class="search-container">
+                  <span class="search-icon"></span>
+                  <input type="text" placeholder="Search by name or specialty..." class="search-input">
+                </div>
+                
+                <div class="specialty-filter">
+                  <label>Specialty</label>
+                  <div class="select-container">
+                    <select class="specialty-select">
+                      <option value="">All Specialties</option>
+                      <option value="cardiologist">Cardiology</option>
+                      <option value="neurologist">Neurology</option>
+                      <option value="pediatrician">Pediatrics</option>
+                      <option value="dermatologist">Dermatology</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                
+                <div class="specialists-list">
+                  <div class="specialist-card selected">
+                    <div class="specialist-info">
+                      <div class="specialist-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Chen">
+                      </div>
+                      <div>
+                        <h4 class="specialist-name">Dr. Sarah Chen</h4>
+                        <div class="specialist-specialty">Cardiologist</div>
+                      </div>
+                    </div>
+                    
+                    <div class="specialist-details">
+                      <div class="specialist-experience">10+ years exp.</div>
+                      <div class="specialist-rating">4.9 ★</div>
+                    </div>
+                    
+                    <div class="specialist-slots">4 available slots today</div>
+                  </div>
+
+                  <div class="specialist-card">
+                    <div class="specialist-info">
+                      <div class="specialist-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Rodriguez">
+                      </div>
+                      <div>
+                        <h4 class="specialist-name">Dr. Michael Rodriguez</h4>
+                        <div class="specialist-specialty">Neurologist</div>
+                      </div>
+                    </div>
+                    
+                    <div class="specialist-details">
+                      <div class="specialist-experience">8+ years exp.</div>
+                      <div class="specialist-rating">4.7 ★</div>
+                    </div>
+                    
+                    <div class="specialist-slots">3 available slots today</div>
+                  </div>
+
+                  <div class="specialist-card">
+                    <div class="specialist-info">
+                      <div class="specialist-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Emily Johnson">
+                      </div>
+                      <div>
+                        <h4 class="specialist-name">Dr. Emily Johnson</h4>
+                        <div class="specialist-specialty">Pediatrician</div>
+                      </div>
+                    </div>
+                    
+                    <div class="specialist-details">
+                      <div class="specialist-experience">12+ years exp.</div>
+                      <div class="specialist-rating">4.8 ★</div>
+                    </div>
+                    
+                    <div class="specialist-slots">4 available slots today</div>
+                  </div>
+
+                  <div class="specialist-card">
+                    <div class="specialist-info">
+                      <div class="specialist-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Dr. David Park">
+                      </div>
+                      <div>
+                        <h4 class="specialist-name">Dr. David Park</h4>
+                        <div class="specialist-specialty">Dermatologist</div>
+                      </div>
+                    </div>
+                    
+                    <div class="specialist-details">
+                      <div class="specialist-experience">7+ years exp.</div>
+                      <div class="specialist-rating">4.6 ★</div>
+                    </div>
+                    
+                    <div class="specialist-slots">3 available slots today</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Calendar and Time Slots -->
+            <div class="calendar-panel">
+              <div class="panel">
+                <div class="panel-header">
+                  <h3 class="panel-title">Select Date & Time</h3>
+                  <div class="date-display">Apr 2025</div>
+                </div>
+                
+                <!-- Date selection -->
+                <div class="date-selector">
+                  <button class="date-nav prev">◀</button>
+                  
+                  <div class="date-pills">
+                    <button class="date-pill">
+                      <span class="day-name">Mon</span>
+                      <span class="day-number">8</span>
+                    </button>
+                    <button class="date-pill">
+                      <span class="day-name">Tue</span>
+                      <span class="day-number">9</span>
+                    </button>
+                    <button class="date-pill">
+                      <span class="day-name">Wed</span>
+                      <span class="day-number">10</span>
+                    </button>
+                    <button class="date-pill">
+                      <span class="day-name">Thu</span>
+                      <span class="day-number">11</span>
+                    </button>
+                    <button class="date-pill selected">
+                      <span class="day-name">Fri</span>
+                      <span class="day-number">12</span>
+                    </button>
+                    <button class="date-pill">
+                      <span class="day-name">Sat</span>
+                      <span class="day-number">13</span>
+                    </button>
+                    <button class="date-pill">
+                      <span class="day-name">Sun</span>
+                      <span class="day-number">14</span>
+                    </button>
+                  </div>
+                  
+                  <button class="date-nav next">▶</button>
+                </div>
+                
+                <!-- Time slots -->
+                <div class="time-slots-container">
+                  <div class="time-slots-header">
+                    <span class="clock-icon"></span>
+                    <h4>Available Time Slots</h4>
+                  </div>
+                  
+                  <div class="time-slots-grid">
+                    <button class="time-slot">9:00 AM</button>
+                    <button class="time-slot">11:30 AM</button>
+                    <button class="time-slot selected">2:00 PM</button>
+                    <button class="time-slot">4:30 PM</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Appointment details -->
+              <div class="panel appointment-details">
+                <h3 class="panel-title">Appointment Details</h3>
+                
+                <div class="doctor-info">
+                  <div class="doctor-profile">
+                    <div class="doctor-avatar">
+                      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Chen">
+                    </div>
+                    <div>
+                      <h4 class="doctor-name">Dr. Sarah Chen</h4>
+                      <div class="doctor-specialty">Cardiologist</div>
+                      <div class="doctor-stats">10+ years experience • 4.9 ★</div>
+                    </div>
+                  </div>
+                  
+                  <div class="appointment-info-grid">
+                    <div class="appointment-info-item">
+                      <div class="info-label">Date</div>
+                      <div class="info-value">
+                        <span class="calendar-icon"></span>
+                        Fri, Apr 12
+                      </div>
+                    </div>
+                    <div class="appointment-info-item">
+                      <div class="info-label">Time</div>
+                      <div class="info-value">
+                        <span class="clock-icon"></span>
+                        2:00 PM
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label>Reason for visit</label>
+                  <select class="form-select">
+                    <option value="consultation">General Consultation</option>
+                    <option value="follow-up">Follow-up Visit</option>
+                    <option value="urgent">Urgent Care</option>
+                    <option value="test-results">Review Test Results</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label>Additional notes</label>
+                  <textarea 
+                    rows="3"
+                    placeholder="Any additional information for the doctor..."
+                    class="form-textarea"
+                  ></textarea>
+                </div>
+                
+                <button class="book-button">
+                  Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
