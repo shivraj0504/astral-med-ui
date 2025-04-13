@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - AI Doctor</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./ai-doctor.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-pulse"></div>
+        <span>AstralMed</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="./index.html" class="sidebar-link">
+          <span class="sidebar-icon home-icon"></span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <a href="./ai-doctor.html" class="sidebar-link active">
+          <span class="sidebar-icon robot-icon"></span>
+          <span class="sidebar-text">AI Doctor</span>
+        </a>
+        <a href="./hospital-booking.html" class="sidebar-link">
+          <span class="sidebar-icon hospital-icon"></span>
+          <span class="sidebar-text">Hospital Booking</span>
+        </a>
+        <a href="./bed-booking.html" class="sidebar-link">
+          <span class="sidebar-icon bed-icon"></span>
+          <span class="sidebar-text">Bed Booking</span>
+        </a>
+        <a href="./appointment-booking.html" class="sidebar-link">
+          <span class="sidebar-icon calendar-icon"></span>
+          <span class="sidebar-text">Appointment Booking</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <div class="system-indicator">
+            <div class="pulse-dot"></div>
+          </div>
+          <div>
+            <h3 class="system-title">AstralMed System</h3>
+            <h4 class="system-status">Medical Status: <span class="status-active">Active</span></h4>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="system-status-indicator">
+            <div class="status-text">System Status</div>
+            <div class="status-active-text">
+              <div class="status-dot"></div>
+              All Systems Operational
+            </div>
+          </div>
+          <div class="last-updated">
+            <span>Last updated:</span>
+            <span class="updated-time">Just now</span>
+          </div>
+          <a href="#" class="login-button">
+            <span class="login-icon"></span>
+            <span>Login</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- AI Doctor Content -->
+      <main class="content">
+        <div class="page-container">
+          <header class="page-header">
+            <h1 class="page-title">AI Doctor</h1>
+            <p class="page-description">Virtual medical consultation</p>
+          </header>
+          
+          <div class="ai-doctor-layout">
+            <!-- Chat area -->
+            <div class="chat-panel">
+              <div class="chat-container">
+                <!-- Header -->
+                <div class="chat-header">
+                  <div class="chat-avatar">
+                    <span class="bot-icon"></span>
+                  </div>
+                  <div>
+                    <div class="chat-bot-name">MedAI Assistant</div>
+                    <div class="chat-bot-status">
+                      <div class="status-indicator"></div>
+                      Online
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Messages -->
+                <div class="chat-messages" id="chatMessages">
+                  <div class="bot-message">
+                    <div class="message-avatar">
+                      <span class="bot-icon"></span>
+                    </div>
+                    <div class="message-bubble bot">
+                      Hello! I'm your AI medical assistant. How can I help you today?
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Input -->
+                <div class="chat-input-container">
+                  <div class="selected-symptom-container" id="selectedSymptomContainer">
+                    <!-- Selected symptom will be added here -->
+                  </div>
+                  
+                  <div class="chat-input-wrapper">
+                    <input 
+                      type="text" 
+                      id="messageInput" 
+                      class="chat-input" 
+                      placeholder="Describe your symptoms..."
+                    />
+                    <button id="sendButton" class="send-button">
+                      <span class="send-icon"></span>
+                      Send
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="ai-doctor-sidebar">
+              <!-- Common symptoms -->
+              <div class="sidebar-panel">
+                <h3 class="panel-title">Common Symptoms</h3>
+                <div class="symptoms-grid">
+                  <button class="symptom-button" data-symptom="Fatigue">
+                    <span class="symptom-icon activity-icon"></span>
+                    <span>Fatigue</span>
+                  </button>
+                  <button class="symptom-button" data-symptom="Headache">
+                    <span class="symptom-icon zap-icon"></span>
+                    <span>Headache</span>
+                  </button>
+                  <button class="symptom-button" data-symptom="Nausea">
+                    <span class="symptom-icon pill-icon"></span>
+                    <span>Nausea</span>
+                  </button>
+                  <button class="symptom-button" data-symptom="Fever">
+                    <span class="symptom-icon activity-icon"></span>
+                    <span>Fever</span>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Health report -->
+              <div class="sidebar-panel">
+                <h3 class="panel-title">Your Health</h3>
+                <div class="health-info">
+                  <div class="health-metric">
+                    <div class="health-metric-header">
+                      <span class="health-metric-label">Risk Level</span>
+                      <span class="health-metric-value">Low</span>
+                    </div>
+                    <div class="health-metric-bar">
+                      <div class="health-metric-progress" style="width: 15%"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="recent-conditions">
+                    <div class="recent-conditions-header">Recent Conditions</div>
+                    <div class="recent-condition-item">
+                      <span class="condition-name">Seasonal Allergies</span>
+                      <span class="condition-date">2 weeks ago</span>
+                    </div>
+                    <div class="recent-condition-item">
+                      <span class="condition-name">Common Cold</span>
+                      <span class="condition-date">2 months ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- AI doctor info -->
+              <div class="sidebar-panel ai-doctor-info">
+                <div class="ai-doctor-profile">
+                  <div class="ai-doctor-avatar">
+                    <span class="bot-icon"></span>
+                  </div>
+                  <div>
+                    <div class="ai-doctor-name">AI Doctor</div>
+                    <div class="ai-doctor-title">Medical Assistant</div>
+                  </div>
+                </div>
+                <p class="ai-doctor-description">
+                  I can help analyze your symptoms, provide general health advice, and suggest 
+                  when you should consult with a healthcare professional.
+                </p>
+                <div class="ai-doctor-disclaimer">
+                  Note: This AI assistant is not a substitute for professional medical advice.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./ai-doctor.js"></script>
+</body>
+</html>

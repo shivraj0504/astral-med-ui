@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - Hospital Booking</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./hospital-booking.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-pulse"></div>
+        <span>AstralMed</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="./index.html" class="sidebar-link">
+          <span class="sidebar-icon home-icon"></span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <a href="./ai-doctor.html" class="sidebar-link">
+          <span class="sidebar-icon robot-icon"></span>
+          <span class="sidebar-text">AI Doctor</span>
+        </a>
+        <a href="./hospital-booking.html" class="sidebar-link active">
+          <span class="sidebar-icon hospital-icon"></span>
+          <span class="sidebar-text">Hospital Booking</span>
+        </a>
+        <a href="./bed-booking.html" class="sidebar-link">
+          <span class="sidebar-icon bed-icon"></span>
+          <span class="sidebar-text">Bed Booking</span>
+        </a>
+        <a href="./appointment-booking.html" class="sidebar-link">
+          <span class="sidebar-icon calendar-icon"></span>
+          <span class="sidebar-text">Appointment Booking</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <div class="system-indicator">
+            <div class="pulse-dot"></div>
+          </div>
+          <div>
+            <h3 class="system-title">AstralMed System</h3>
+            <h4 class="system-status">Medical Status: <span class="status-active">Active</span></h4>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="system-status-indicator">
+            <div class="status-text">System Status</div>
+            <div class="status-active-text">
+              <div class="status-dot"></div>
+              All Systems Operational
+            </div>
+          </div>
+          <div class="last-updated">
+            <span>Last updated:</span>
+            <span class="updated-time">Just now</span>
+          </div>
+          <a href="./login.html" class="login-button">
+            <span class="login-icon"></span>
+            <span>Login</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Hospital Booking Content -->
+      <main class="content">
+        <div class="page-container">
+          <header class="page-header">
+            <h1 class="page-title">Hospital Booking</h1>
+            <p class="page-description">Find and book nearby hospitals</p>
+          </header>
+          
+          <div class="hospital-layout">
+            <!-- Map and Search Section -->
+            <div class="map-section">
+              <div class="panel">
+                <div class="panel-header">
+                  <h3 class="panel-title">Find Hospitals</h3>
+                  <div class="view-toggle">
+                    <button class="view-toggle-btn active" data-view="map">Map</button>
+                    <button class="view-toggle-btn" data-view="list">List</button>
+                  </div>
+                </div>
+                
+                <div class="search-container">
+                  <div class="search-bar">
+                    <span class="search-icon"></span>
+                    <input type="text" placeholder="Search by hospital name or area..." class="search-input" id="hospitalSearch">
+                    <span class="location-icon" id="useMyLocation"></span>
+                  </div>
+                  
+                  <div class="filter-container">
+                    <div class="filter-group">
+                      <label>Specialty</label>
+                      <div class="select-container">
+                        <select class="filter-select" id="specialtyFilter">
+                          <option value="">All Specialties</option>
+                          <option value="general">General</option>
+                          <option value="cardiology">Cardiology</option>
+                          <option value="neurology">Neurology</option>
+                          <option value="pediatrics">Pediatrics</option>
+                          <option value="emergency">Emergency</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                      <label>Distance</label>
+                      <div class="select-container">
+                        <select class="filter-select" id="distanceFilter">
+                          <option value="5">Within 5 miles</option>
+                          <option value="10" selected>Within 10 miles</option>
+                          <option value="20">Within 20 miles</option>
+                          <option value="50">Within 50 miles</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="map-container" id="hospitalMap">
+                  <div class="map-placeholder">
+                    <!-- Map would be rendered here by a mapping library -->
+                    <div class="map-overlay">
+                      <div class="map-marker" style="top: 40%; left: 30%;" data-hospital-id="1">
+                        <div class="marker-dot"></div>
+                      </div>
+                      <div class="map-marker" style="top: 55%; left: 45%;" data-hospital-id="2">
+                        <div class="marker-dot"></div>
+                      </div>
+                      <div class="map-marker" style="top: 35%; left: 60%;" data-hospital-id="3">
+                        <div class="marker-dot"></div>
+                      </div>
+                      <div class="map-marker" style="top: 65%; left: 75%;" data-hospital-id="4">
+                        <div class="marker-dot"></div>
+                      </div>
+                      <div class="map-marker" style="top: 25%; left: 55%;" data-hospital-id="5">
+                        <div class="marker-dot"></div>
+                      </div>
+                    </div>
+                    <div class="map-controls">
+                      <button class="map-control-button zoom-in">+</button>
+                      <button class="map-control-button zoom-out">−</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="hospital-list" id="hospitalList" style="display: none;">
+                  <div class="hospital-list-item" data-hospital-id="1">
+                    <div class="hospital-icon general-icon"></div>
+                    <div class="hospital-info">
+                      <div class="hospital-name">City General Hospital</div>
+                      <div class="hospital-details">General • 2.1 miles away</div>
+                    </div>
+                    <div class="hospital-rating">4.8 <span class="star-icon"></span></div>
+                  </div>
+                  
+                  <div class="hospital-list-item" data-hospital-id="2">
+                    <div class="hospital-icon cardiology-icon"></div>
+                    <div class="hospital-info">
+                      <div class="hospital-name">Heart & Vascular Institute</div>
+                      <div class="hospital-details">Cardiology • 3.5 miles away</div>
+                    </div>
+                    <div class="hospital-rating">4.9 <span class="star-icon"></span></div>
+                  </div>
+                  
+                  <div class="hospital-list-item" data-hospital-id="3">
+                    <div class="hospital-icon neurology-icon"></div>
+                    <div class="hospital-info">
+                      <div class="hospital-name">Neuroscience Medical Center</div>
+                      <div class="hospital-details">Neurology • 5.2 miles away</div>
+                    </div>
+                    <div class="hospital-rating">4.7 <span class="star-icon"></span></div>
+                  </div>
+                  
+                  <div class="hospital-list-item" data-hospital-id="4">
+                    <div class="hospital-icon pediatrics-icon"></div>
+                    <div class="hospital-info">
+                      <div class="hospital-name">Children's Medical Center</div>
+                      <div class="hospital-details">Pediatrics • 7.8 miles away</div>
+                    </div>
+                    <div class="hospital-rating">4.6 <span class="star-icon"></span></div>
+                  </div>
+                  
+                  <div class="hospital-list-item" data-hospital-id="5">
+                    <div class="hospital-icon emergency-icon"></div>
+                    <div class="hospital-info">
+                      <div class="hospital-name">Emergency Care Unit</div>
+                      <div class="hospital-details">Emergency • 4.3 miles away</div>
+                    </div>
+                    <div class="hospital-rating">4.5 <span class="star-icon"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Hospital Details Section -->
+            <div class="hospital-details-section">
+              <div class="panel" id="hospitalDetails">
+                <h3 class="panel-title">Hospital Details</h3>
+                
+                <div class="selected-hospital">
+                  <div class="hospital-header">
+                    <div class="hospital-avatar">
+                      <div class="hospital-image"></div>
+                    </div>
+                    <div>
+                      <h4 class="selected-hospital-name">City General Hospital</h4>
+                      <div class="hospital-type">General Hospital</div>
+                      <div class="hospital-meta">
+                        <span class="hospital-distance">2.1 miles away</span>
+                        <span class="dot-separator"></span>
+                        <span class="hospital-rating-small">4.8 <span class="star-icon-small"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="hospital-actions">
+                    <button class="hospital-action-button call">
+                      <span class="call-icon"></span>
+                      Call
+                    </button>
+                    <button class="hospital-action-button directions">
+                      <span class="directions-icon"></span>
+                      Directions
+                    </button>
+                    <button class="hospital-action-button website">
+                      <span class="website-icon"></span>
+                      Website
+                    </button>
+                  </div>
+                  
+                  <div class="hospital-info-grid">
+                    <div class="info-item">
+                      <div class="info-label">Emergency</div>
+                      <div class="info-value yes">24/7 Available</div>
+                    </div>
+                    <div class="info-item">
+                      <div class="info-label">Insurance</div>
+                      <div class="info-value yes">Accepted</div>
+                    </div>
+                    <div class="info-item">
+                      <div class="info-label">Beds Available</div>
+                      <div class="info-value">15/120</div>
+                    </div>
+                    <div class="info-item">
+                      <div class="info-label">Waiting Time</div>
+                      <div class="info-value">~30 mins</div>
+                    </div>
+                  </div>
+                  
+                  <div class="hospital-section">
+                    <h5 class="section-title">Available Services</h5>
+                    <div class="services-tags">
+                      <span class="service-tag">General Medicine</span>
+                      <span class="service-tag">Emergency Care</span>
+                      <span class="service-tag">Surgery</span>
+                      <span class="service-tag">Radiology</span>
+                      <span class="service-tag">Laboratory</span>
+                      <span class="service-tag">Pharmacy</span>
+                    </div>
+                  </div>
+                  
+                  <div class="hospital-section">
+                    <h5 class="section-title">Address</h5>
+                    <div class="hospital-address">
+                      <p>123 Medical Center Blvd,<br>Metropolis, CA 90001</p>
+                    </div>
+                  </div>
+                  
+                  <div class="hospital-section">
+                    <h5 class="section-title">Opening Hours</h5>
+                    <div class="opening-hours">
+                      <div class="hour-row">
+                        <div class="day">Monday - Friday</div>
+                        <div class="hours">8:00 AM - 8:00 PM</div>
+                      </div>
+                      <div class="hour-row">
+                        <div class="day">Saturday</div>
+                        <div class="hours">9:00 AM - 5:00 PM</div>
+                      </div>
+                      <div class="hour-row">
+                        <div class="day">Sunday</div>
+                        <div class="hours">10:00 AM - 4:00 PM</div>
+                      </div>
+                      <div class="hour-row emergency">
+                        <div class="day">Emergency</div>
+                        <div class="hours">24/7</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button class="book-button">
+                    Book Appointment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./hospital-booking.js"></script>
+</body>
+</html>

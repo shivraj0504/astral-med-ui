@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - Medical Dashboard</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-pulse"></div>
+        <span>AstralMed</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="./index.html" class="sidebar-link active">
+          <span class="sidebar-icon home-icon"></span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <a href="./ai-doctor.html" class="sidebar-link">
+          <span class="sidebar-icon robot-icon"></span>
+          <span class="sidebar-text">AI Doctor</span>
+        </a>
+        <a href="./hospital-booking.html" class="sidebar-link">
+          <span class="sidebar-icon hospital-icon"></span>
+          <span class="sidebar-text">Hospital Booking</span>
+        </a>
+        <a href="./bed-booking.html" class="sidebar-link">
+          <span class="sidebar-icon bed-icon"></span>
+          <span class="sidebar-text">Bed Booking</span>
+        </a>
+        <a href="./appointment-booking.html" class="sidebar-link">
+          <span class="sidebar-icon calendar-icon"></span>
+          <span class="sidebar-text">Appointment Booking</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <div class="system-indicator">
+            <div class="pulse-dot"></div>
+          </div>
+          <div>
+            <h3 class="system-title">AstralMed System</h3>
+            <h4 class="system-status">Medical Status: <span class="status-active">Active</span></h4>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="system-status-indicator">
+            <div class="status-text">System Status</div>
+            <div class="status-active-text">
+              <div class="status-dot"></div>
+              All Systems Operational
+            </div>
+          </div>
+          <div class="last-updated">
+            <span>Last updated:</span>
+            <span class="updated-time">Just now</span>
+          </div>
+          <a href="./login.html" class="login-button">
+            <span class="login-icon"></span>
+            <span>Login</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <main class="content">
+        <div class="page-container">
+          <header class="page-header">
+            <h1 class="page-title">Medical Dashboard</h1>
+            <p class="page-description">Welcome to AstralMed Health System</p>
+          </header>
+          
+          <div class="dashboard-layout">
+            <!-- Health Status Panel -->
+            <div class="health-status-panel">
+              <div class="panel">
+                <h3 class="panel-title">Your Health Overview</h3>
+                
+                <div class="health-stats">
+                  <div class="health-stat">
+                    <div class="stat-icon heart-icon"></div>
+                    <div class="stat-info">
+                      <div class="stat-value">72<span>bpm</span></div>
+                      <div class="stat-label">Heart Rate</div>
+                    </div>
+                  </div>
+                  
+                  <div class="health-stat">
+                    <div class="stat-icon blood-icon"></div>
+                    <div class="stat-info">
+                      <div class="stat-value">120/80</div>
+                      <div class="stat-label">Blood Pressure</div>
+                    </div>
+                  </div>
+                  
+                  <div class="health-stat">
+                    <div class="stat-icon temp-icon"></div>
+                    <div class="stat-info">
+                      <div class="stat-value">98.6<span>°F</span></div>
+                      <div class="stat-label">Temperature</div>
+                    </div>
+                  </div>
+                  
+                  <div class="health-stat">
+                    <div class="stat-icon oxy-icon"></div>
+                    <div class="stat-info">
+                      <div class="stat-value">98<span>%</span></div>
+                      <div class="stat-label">Oxygen</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 3D Human Body Model -->
+              <div class="panel body-model-container">
+                <h3 class="panel-title">Human Body Analysis</h3>
+                
+                <div class="body-model" id="bodyModel">
+                  <div class="body-model-placeholder">
+                    <!-- 3D body model would be rendered here -->
+                    <div class="body-outline"></div>
+                    <div class="body-markers">
+                      <div class="body-marker" style="top: 20%; left: 50%;" data-organ="brain">
+                        <div class="marker-pulse"></div>
+                      </div>
+                      <div class="body-marker" style="top: 35%; left: 50%;" data-organ="heart">
+                        <div class="marker-pulse"></div>
+                      </div>
+                      <div class="body-marker" style="top: 45%; left: 50%;" data-organ="lungs">
+                        <div class="marker-pulse"></div>
+                      </div>
+                      <div class="body-marker" style="top: 55%; left: 50%;" data-organ="stomach">
+                        <div class="marker-pulse"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="body-controls">
+                    <button class="body-control-button" id="rotateLeft">◀</button>
+                    <button class="body-control-button" id="resetView">Reset</button>
+                    <button class="body-control-button" id="rotateRight">▶</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Services Panel -->
+            <div class="services-panel">
+              <div class="panel">
+                <h3 class="panel-title">Medical Services</h3>
+                
+                <div class="services-grid">
+                  <a href="./ai-doctor.html" class="service-card">
+                    <div class="service-icon ai-icon"></div>
+                    <h4 class="service-title">AI Doctor</h4>
+                    <p class="service-description">Consult with our AI for preliminary diagnosis</p>
+                  </a>
+                  
+                  <a href="./appointment-booking.html" class="service-card">
+                    <div class="service-icon calendar-big-icon"></div>
+                    <h4 class="service-title">Appointments</h4>
+                    <p class="service-description">Schedule consultations with specialists</p>
+                  </a>
+                  
+                  <a href="./hospital-booking.html" class="service-card">
+                    <div class="service-icon hospital-big-icon"></div>
+                    <h4 class="service-title">Hospitals</h4>
+                    <p class="service-description">Find and book nearby hospitals</p>
+                  </a>
+                  
+                  <a href="./bed-booking.html" class="service-card">
+                    <div class="service-icon bed-big-icon"></div>
+                    <h4 class="service-title">Bed Booking</h4>
+                    <p class="service-description">Reserve hospital beds in advance</p>
+                  </a>
+                </div>
+                
+                <div class="upcoming-appointments">
+                  <h4 class="section-title">Upcoming Appointments</h4>
+                  
+                  <div class="appointment-list">
+                    <div class="appointment-card">
+                      <div class="appointment-doctor">
+                        <div class="doctor-avatar">
+                          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Chen">
+                        </div>
+                        <div>
+                          <div class="doctor-name">Dr. Sarah Chen</div>
+                          <div class="doctor-specialty">Cardiologist</div>
+                        </div>
+                      </div>
+                      
+                      <div class="appointment-details">
+                        <div class="appointment-date">
+                          <span class="calendar-small-icon"></span>
+                          Apr 12, 2025
+                        </div>
+                        <div class="appointment-time">
+                          <span class="clock-small-icon"></span>
+                          2:00 PM
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="appointment-card">
+                      <div class="appointment-doctor">
+                        <div class="doctor-avatar">
+                          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Rodriguez">
+                        </div>
+                        <div>
+                          <div class="doctor-name">Dr. Michael Rodriguez</div>
+                          <div class="doctor-specialty">Neurologist</div>
+                        </div>
+                      </div>
+                      
+                      <div class="appointment-details">
+                        <div class="appointment-date">
+                          <span class="calendar-small-icon"></span>
+                          Apr 15, 2025
+                        </div>
+                        <div class="appointment-time">
+                          <span class="clock-small-icon"></span>
+                          10:30 AM
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

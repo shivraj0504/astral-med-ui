@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - Login</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./auth.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-pulse"></div>
+        <div class="logo-text">AstralMed</div>
+      </div>
+      
+      <h2 class="auth-title">Login to AstralMed</h2>
+      
+      <form class="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-input" placeholder="your.email@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="••••••••">
+          <div class="input-addon">
+            <button type="button" id="togglePassword" class="toggle-password">
+              <span class="eye-icon"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="form-options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" class="custom-checkbox">
+            <label for="remember">Remember me</label>
+          </div>
+          
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="auth-button">
+          <span class="login-icon"></span>
+          Login
+        </button>
+      </form>
+      
+      <div class="auth-separator">
+        <span>or continue with</span>
+      </div>
+      
+      <div class="social-auth">
+        <button class="social-auth-button google">
+          <span class="google-icon"></span>
+          Google
+        </button>
+        
+        <button class="social-auth-button apple">
+          <span class="apple-icon"></span>
+          Apple
+        </button>
+      </div>
+      
+      <div class="auth-footer">
+        Don't have an account? <a href="./signup.html">Sign up</a>
+      </div>
+    </div>
+    
+    <div class="auth-decoration">
+      <div class="pulse-circle c1"></div>
+      <div class="pulse-circle c2"></div>
+      <div class="pulse-circle c3"></div>
+    </div>
+  </div>
+  
+  <script src="./auth.js"></script>
+</body>
+</html>

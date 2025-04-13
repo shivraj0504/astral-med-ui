@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstralMed - Bed Booking</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./bed-booking.css">
+</head>
+<body class="bg-dark-blue">
+  <div class="layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-pulse"></div>
+        <span>AstralMed</span>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="./index.html" class="sidebar-link">
+          <span class="sidebar-icon home-icon"></span>
+          <span class="sidebar-text">Home</span>
+        </a>
+        <a href="./ai-doctor.html" class="sidebar-link">
+          <span class="sidebar-icon robot-icon"></span>
+          <span class="sidebar-text">AI Doctor</span>
+        </a>
+        <a href="./hospital-booking.html" class="sidebar-link">
+          <span class="sidebar-icon hospital-icon"></span>
+          <span class="sidebar-text">Hospital Booking</span>
+        </a>
+        <a href="./bed-booking.html" class="sidebar-link active">
+          <span class="sidebar-icon bed-icon"></span>
+          <span class="sidebar-text">Bed Booking</span>
+        </a>
+        <a href="./appointment-booking.html" class="sidebar-link">
+          <span class="sidebar-icon calendar-icon"></span>
+          <span class="sidebar-text">Appointment Booking</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <div class="system-indicator">
+            <div class="pulse-dot"></div>
+          </div>
+          <div>
+            <h3 class="system-title">AstralMed System</h3>
+            <h4 class="system-status">Medical Status: <span class="status-active">Active</span></h4>
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <div class="system-status-indicator">
+            <div class="status-text">System Status</div>
+            <div class="status-active-text">
+              <div class="status-dot"></div>
+              All Systems Operational
+            </div>
+          </div>
+          <div class="last-updated">
+            <span>Last updated:</span>
+            <span class="updated-time">Just now</span>
+          </div>
+          <a href="./login.html" class="login-button">
+            <span class="login-icon"></span>
+            <span>Login</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Bed Booking Content -->
+      <main class="content">
+        <div class="page-container">
+          <header class="page-header">
+            <h1 class="page-title">Bed Booking</h1>
+            <p class="page-description">Reserve hospital beds in advance</p>
+          </header>
+          
+          <div class="bed-booking-layout">
+            <!-- Available Beds Section -->
+            <div class="available-beds-panel">
+              <div class="panel">
+                <h3 class="panel-title">Available Hospital Beds</h3>
+                
+                <div class="filters-container">
+                  <div class="search-bar">
+                    <span class="search-icon"></span>
+                    <input type="text" placeholder="Search hospitals..." class="search-input" id="hospitalSearch">
+                  </div>
+                  
+                  <div class="filter-row">
+                    <div class="filter-group">
+                      <label>Bed Type</label>
+                      <div class="select-container">
+                        <select class="filter-select" id="bedTypeFilter">
+                          <option value="">All Bed Types</option>
+                          <option value="regular">Regular</option>
+                          <option value="icu">Intensive Care (ICU)</option>
+                          <option value="emergency">Emergency</option>
+                          <option value="maternity">Maternity</option>
+                          <option value="pediatric">Pediatric</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                      <label>Sort By</label>
+                      <div class="select-container">
+                        <select class="filter-select" id="sortFilter">
+                          <option value="availability">Availability</option>
+                          <option value="distance">Distance</option>
+                          <option value="rating">Rating</option>
+                          <option value="price">Price</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bed-availability-grid">
+                  <div class="bed-card" data-hospital-id="1">
+                    <div class="bed-card-header">
+                      <div class="hospital-icon general-icon"></div>
+                      <div>
+                        <div class="hospital-name">City General Hospital</div>
+                        <div class="hospital-distance">2.1 miles away</div>
+                      </div>
+                      <div class="availability-indicator high">
+                        <span class="availability-dot"></span>
+                        High
+                      </div>
+                    </div>
+                    
+                    <div class="bed-stats-row">
+                      <div class="bed-stat">
+                        <div class="stat-label">Regular Beds</div>
+                        <div class="stat-value">15 <span class="stat-total">/ 80</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">ICU Beds</div>
+                        <div class="stat-value">7 <span class="stat-total">/ 20</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">Emergency</div>
+                        <div class="stat-value">12 <span class="stat-total">/ 20</span></div>
+                      </div>
+                    </div>
+                    
+                    <div class="bed-tags">
+                      <span class="bed-tag insurance">Insurance Accepted</span>
+                      <span class="bed-tag emergency">24/7 Emergency</span>
+                    </div>
+                    
+                    <button class="view-beds-button">View Available Beds</button>
+                  </div>
+                  
+                  <div class="bed-card" data-hospital-id="2">
+                    <div class="bed-card-header">
+                      <div class="hospital-icon cardiology-icon"></div>
+                      <div>
+                        <div class="hospital-name">Heart & Vascular Institute</div>
+                        <div class="hospital-distance">3.5 miles away</div>
+                      </div>
+                      <div class="availability-indicator medium">
+                        <span class="availability-dot"></span>
+                        Medium
+                      </div>
+                    </div>
+                    
+                    <div class="bed-stats-row">
+                      <div class="bed-stat">
+                        <div class="stat-label">Regular Beds</div>
+                        <div class="stat-value">8 <span class="stat-total">/ 30</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">ICU Beds</div>
+                        <div class="stat-value">3 <span class="stat-total">/ 10</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">Cardiac Care</div>
+                        <div class="stat-value">5 <span class="stat-total">/ 15</span></div>
+                      </div>
+                    </div>
+                    
+                    <div class="bed-tags">
+                      <span class="bed-tag insurance">Insurance Accepted</span>
+                      <span class="bed-tag specialty">Cardiac Specialty</span>
+                    </div>
+                    
+                    <button class="view-beds-button">View Available Beds</button>
+                  </div>
+                  
+                  <div class="bed-card" data-hospital-id="4">
+                    <div class="bed-card-header">
+                      <div class="hospital-icon pediatrics-icon"></div>
+                      <div>
+                        <div class="hospital-name">Children's Medical Center</div>
+                        <div class="hospital-distance">7.8 miles away</div>
+                      </div>
+                      <div class="availability-indicator low">
+                        <span class="availability-dot"></span>
+                        Low
+                      </div>
+                    </div>
+                    
+                    <div class="bed-stats-row">
+                      <div class="bed-stat">
+                        <div class="stat-label">Regular Beds</div>
+                        <div class="stat-value">4 <span class="stat-total">/ 40</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">PICU Beds</div>
+                        <div class="stat-value">2 <span class="stat-total">/ 15</span></div>
+                      </div>
+                      <div class="bed-stat">
+                        <div class="stat-label">NICU</div>
+                        <div class="stat-value">3 <span class="stat-total">/ 25</span></div>
+                      </div>
+                    </div>
+                    
+                    <div class="bed-tags">
+                      <span class="bed-tag insurance">Insurance Accepted</span>
+                      <span class="bed-tag specialty">Pediatric Specialty</span>
+                      <span class="bed-tag emergency">24/7 Emergency</span>
+                    </div>
+                    
+                    <button class="view-beds-button">View Available Beds</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Bed Booking Section -->
+            <div class="bed-booking-panel">
+              <div class="panel">
+                <h3 class="panel-title">Bed Reservation</h3>
+                
+                <div class="selected-hospital-info">
+                  <div class="hospital-header">
+                    <div class="hospital-avatar">
+                      <div class="hospital-image"></div>
+                    </div>
+                    <div>
+                      <h4 class="selected-hospital-name">City General Hospital</h4>
+                      <div class="hospital-meta">
+                        <span class="hospital-distance">2.1 miles away</span>
+                        <span class="dot-separator"></span>
+                        <span class="hospital-rating">4.8 <span class="star-icon-small"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="bed-selection">
+                    <h5 class="section-title">Select Bed Type</h5>
+                    
+                    <div class="bed-type-options">
+                      <div class="bed-type-option selected">
+                        <input type="radio" name="bedType" id="regularBed" value="regular" checked>
+                        <label for="regularBed">
+                          <div class="bed-option-icon regular-bed-icon"></div>
+                          <div class="bed-option-info">
+                            <div class="bed-option-name">Regular Bed</div>
+                            <div class="bed-option-details">Standard hospital bed</div>
+                          </div>
+                          <div class="bed-option-availability">15 available</div>
+                        </label>
+                      </div>
+                      
+                      <div class="bed-type-option">
+                        <input type="radio" name="bedType" id="icuBed" value="icu">
+                        <label for="icuBed">
+                          <div class="bed-option-icon icu-bed-icon"></div>
+                          <div class="bed-option-info">
+                            <div class="bed-option-name">ICU Bed</div>
+                            <div class="bed-option-details">Intensive care unit</div>
+                          </div>
+                          <div class="bed-option-availability">7 available</div>
+                        </label>
+                      </div>
+                      
+                      <div class="bed-type-option">
+                        <input type="radio" name="bedType" id="emergencyBed" value="emergency">
+                        <label for="emergencyBed">
+                          <div class="bed-option-icon emergency-bed-icon"></div>
+                          <div class="bed-option-info">
+                            <div class="bed-option-name">Emergency Bed</div>
+                            <div class="bed-option-details">Emergency department</div>
+                          </div>
+                          <div class="bed-option-availability">12 available</div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="reservation-details">
+                    <h5 class="section-title">Reservation Details</h5>
+                    
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="reservationDate">Admission Date</label>
+                        <div class="input-with-icon">
+                          <input type="text" id="reservationDate" class="form-input" placeholder="Select date" value="Apr 15, 2025">
+                          <span class="calendar-icon-small"></span>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="reservationDuration">Duration (days)</label>
+                        <div class="number-input">
+                          <button type="button" class="number-decrement">-</button>
+                          <input type="number" id="reservationDuration" class="form-input" value="3" min="1" max="30">
+                          <button type="button" class="number-increment">+</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="patientName">Patient Name</label>
+                      <input type="text" id="patientName" class="form-input" placeholder="Enter patient's full name">
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="patientAge">Patient Age</label>
+                        <input type="number" id="patientAge" class="form-input" placeholder="Age">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="patientGender">Gender</label>
+                        <div class="select-container">
+                          <select id="patientGender" class="form-select">
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                          <span class="select-arrow"></span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="medicalCondition">Medical Condition</label>
+                      <textarea id="medicalCondition" class="form-textarea" placeholder="Briefly describe the patient's condition"></textarea>
+                    </div>
+                  </div>
+                  
+                  <div class="insurance-section">
+                    <div class="section-title-row">
+                      <h5 class="section-title">Insurance Information</h5>
+                      <div class="insurance-accepted">Insurance Accepted</div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="insuranceProvider">Insurance Provider</label>
+                      <div class="select-container">
+                        <select id="insuranceProvider" class="form-select">
+                          <option value="">Select Provider</option>
+                          <option value="aetna">Aetna</option>
+                          <option value="bluecross">Blue Cross Blue Shield</option>
+                          <option value="cigna">Cigna</option>
+                          <option value="united">United Healthcare</option>
+                          <option value="medicare">Medicare</option>
+                          <option value="medicaid">Medicaid</option>
+                        </select>
+                        <span class="select-arrow"></span>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="policyNumber">Policy Number</label>
+                      <input type="text" id="policyNumber" class="form-input" placeholder="Enter policy number">
+                    </div>
+                    
+                    <div class="insurance-verification">
+                      <input type="checkbox" id="verifyInsurance" class="custom-checkbox">
+                      <label for="verifyInsurance">I consent to verification of my insurance information</label>
+                    </div>
+                  </div>
+                  
+                  <div class="pricing-section">
+                    <h5 class="section-title">Pricing Estimate</h5>
+                    
+                    <div class="price-breakdown">
+                      <div class="price-row">
+                        <div class="price-item">Regular Bed</div>
+                        <div class="price-value">$500 per day</div>
+                      </div>
+                      <div class="price-row">
+                        <div class="price-item">Duration</div>
+                        <div class="price-value">3 days</div>
+                      </div>
+                      <div class="price-row total">
+                        <div class="price-item">Estimated Total</div>
+                        <div class="price-value">$1,500</div>
+                      </div>
+                      <div class="price-note">
+                        * Final cost may vary based on actual treatment and insurance coverage
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <button class="reserve-button">
+                    Reserve Bed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="./bed-booking.js"></script>
+</body>
+</html>
